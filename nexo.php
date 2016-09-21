@@ -41,7 +41,9 @@ switch ($queHago) {
 
 		break;
 	case 'TraerCD':
-			$cd = cd::TraerUnCd($_POST['id']);		
+
+			$cd = cd::TraerUnCd($_POST['id']);	
+			sleep(5);	
 			echo json_encode($cd) ;
 
 		break;

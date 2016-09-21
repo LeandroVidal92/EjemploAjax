@@ -1,7 +1,7 @@
 function BorrarCD(idParametro)
 {
 	//alert(idParametro);
-		var funcionAjax=$.ajax({
+		var funcionAjax=$.ajax({ //Creo objecto ajax
 		url:"nexo.php",
 		type:"post",
 		data:{
@@ -30,6 +30,8 @@ function EditarCD(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
+		Mostrar("MostrarFormAlta");
+		sleep(2);
 		var cd =JSON.parse(retorno);	
 		$("#idCD").val(cd.id);
 		$("#cantante").val(cd.cantante);
@@ -39,7 +41,8 @@ function EditarCD(idParametro)
 	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);	
 	});	
-	Mostrar("MostrarFormAlta");
+	//sleep(6);
+	
 }
 
 function GuardarCD()
